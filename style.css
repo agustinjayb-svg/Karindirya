@@ -1,20 +1,24 @@
+/* ================== GLOBAL STYLES ================== */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
     color: #333;
     opacity: 0;
     animation: customFadeIn 1s ease forwards;
+
+    /* ✅ Food-themed full background image */
+    background-image: url("image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
+/* ================== ANIMATIONS ================== */
 @keyframes customFadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .animate-on-load {
@@ -24,45 +28,23 @@ body {
 }
 
 @keyframes slideInLeft {
-    0% {
-        transform: translateX(-100%) scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0) scale(1);
-        opacity: 1;
-    }
+    0% { transform: translateX(-100%) scale(0.5); opacity: 0; }
+    100% { transform: translateX(0) scale(1); opacity: 1; }
 }
 
 @keyframes slideInRight {
-    0% {
-        transform: translateX(100%) scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0) scale(1);
-        opacity: 1.5;
-    }
+    0% { transform: translateX(100%) scale(0.5); opacity: 0; }
+    100% { transform: translateX(0) scale(1); opacity: 1.5; }
 }
 
 @keyframes slideInUp {
-    0% {
-        transform: translateY(100%) scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
+    0% { transform: translateY(100%) scale(0.5); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .hero-content h1,
@@ -77,17 +59,9 @@ body {
 }
 
 @keyframes popIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 .hero-content p {
@@ -98,6 +72,7 @@ body {
     animation-name: slideInRight;
 }
 
+/* ================== GLOBAL ELEMENTS ================== */
 h1, h2, h3 {
     margin: 0;
 }
@@ -112,6 +87,7 @@ a:hover {
     color: #ffe8b5;
 }
 
+/* ================== HEADER ================== */
 header {
     background: #e26a2c;
     position: fixed;
@@ -122,6 +98,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
+/* ✅ Navbar with logo image */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -130,9 +107,15 @@ header {
     color: white;
 }
 
-.logo {
-    font-weight: 700;
-    font-size: 1.5rem;
+.logo img {
+    height: 55px;
+    width: auto;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -151,9 +134,9 @@ header {
     color: #ffe8b5;
 }
 
-/* HERO */
+/* ================== HERO ================== */
 .hero {
-    background: linear-gradient(135deg, #ffe8b5, #ffb87a);
+    background: rgba(255, 255, 255, 0.8);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -161,6 +144,7 @@ header {
     text-align: center;
     color: #4b3d2c;
     padding-top: 70px;
+    border-radius: 10px;
 }
 
 .hero-content h1 {
@@ -185,13 +169,17 @@ header {
     background-color: #2e5333;
 }
 
-.about {
+/* ================== SECTIONS ================== */
+section {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
     padding: 100px 70px;
-    background: #ffffff;
-    text-align: center;
-    /* Remove background-image from here */
+    margin: 50px auto;
+    max-width: 1200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* ABOUT */
 .about h2 {
     font-size: 2.5rem;
     color: #e26a2c;
@@ -238,13 +226,7 @@ header {
     line-height: 1.6;
 }
 
-.menu {
-    background-color: #fffaf5;
-    padding: 100px 70px;
-    text-align: center;
-    /* Remove background-image from here */
-}
-
+/* MENU */
 .menu h2 {
     font-size: 2.5rem;
     color: #e26a2c;
@@ -278,17 +260,6 @@ header {
 }
 
 .menu-img {
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.menu-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.menu-img {
     border-radius: 15px;
     height: 160px;
     margin-bottom: 15px;
@@ -307,13 +278,7 @@ header {
 .menu-img.caldereta { background-image: url("beef caldereta2.png"); }
 .menu-img.pancit { background-image: url("pancit canton3.png"); }
 
-.why-us {
-    background-color: #fffaf5;
-    padding: 100px 70px;
-    text-align: center;
-    /* Remove background-image from here */
-}
-
+/* WHY US */
 .why-us h2 {
     font-size: 2.5rem;
     color: #e26a2c;
@@ -365,13 +330,7 @@ header {
     line-height: 1.5;
 }
 
-.services {
-    background-color: #fffaf5;
-    padding: 100px 70px;
-    text-align: center;
-    /* Remove background-image from here */
-}
-
+/* SERVICES */
 .services h2 {
     font-size: 2.5rem;
     color: #e26a2c;
@@ -423,13 +382,7 @@ header {
     line-height: 1.5;
 }
 
-.contact {
-    background: linear-gradient(135deg, #fef6ec, #fff0d3);
-    padding: 100px 70px;
-    text-align: center;
-    /* Remove background-image from here */
-}
-
+/* CONTACT */
 .contact h2 {
     font-size: 2.5rem;
     color: #3b6f44;
@@ -458,6 +411,7 @@ header {
     line-height: 1.5;
 }
 
+/* FOOTER */
 footer {
     background-color: #3b6f44;
     color: white;
@@ -490,7 +444,7 @@ footer {
     margin-right: 5px;
 }
 
-/* Corrected Media Query for Responsiveness */
+/* ================== RESPONSIVE DESIGN ================== */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
