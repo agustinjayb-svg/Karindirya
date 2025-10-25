@@ -4,6 +4,7 @@ body {
     padding: 0;
     color: #333;
     opacity: 0;
+    height: 100vh;
     animation: customFadeIn 1s ease forwards;
 
     background-image: url("image.png");
@@ -48,7 +49,7 @@ body {
 .hero-content h1,
 .hero-content p,
 .btn {
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-fill-mode: both;
 }
 
